@@ -1,0 +1,77 @@
+// Sleep hours function
+const getSleepHours = (day) => {
+
+// Days of the Week and hours slept for each
+  switch(day) {
+    case 'Monday':
+      return 8;
+      break;
+    case 'Tuesday':
+      return 8;
+      break;
+    case 'Wednesday':
+      return 8;
+      break;
+    case 'Thursday':
+      return 8;
+      break;
+    case 'Friday':
+      return 8;
+      break;
+    case 'Saturday':
+      return 7;
+      break;
+    case 'Sunday':
+      return 6;
+      break;
+    default:
+      return 'Error!'
+      break;
+  }
+};
+
+// Add together all sleep hours for every day of the week
+const getActualSleepHours = () =>
+  getSleepHours('Monday') + getSleepHours('Tuesday') + getSleepHours('Wednesday') + getSleepHours('Thursday') + getSleepHours('Friday') + getSleepHours('Saturday') + getSleepHours('Sunday');
+
+// Print one day's sleep hours
+console.log(getSleepHours('Monday'));
+// Print full week's sleep hours
+console.log(getActualSleepHours());
+
+// Ideal sleep hours function
+const getIdealSleepHours = () => {
+  let idealHours = 8;
+  return idealHours * 7;
+};
+
+// Calculate Sleep Debt
+const calculateSleepDebt = () => {
+  const actualSleepHours = getActualSleepHours();
+  const idealSleepHours = getIdealSleepHours();
+
+  if(actualSleepHours === idealSleepHours) {
+    console.log('You got the perfect amount of sleep!');
+  }
+  else if (actualSleepHours > idealSleepHours) {
+    console.log('You got ' + (actualSleepHours - idealSleepHours) + ' more hours of sleep than needed this week.');
+  }
+  else if(actualSleepHours < idealSleepHours) {
+    console.log('You have slept ' + (actualSleepHours) + ' hours this week. You should get some rest.');
+  }
+  else {
+    console.log('Error.');
+  }
+};
+
+// Run the program
+calculateSleepDebt();
+
+
+
+
+
+
+
+
+
